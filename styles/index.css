@@ -7,8 +7,9 @@
 }
 
 #bar {
-    width: 200vw;
+    width: 100vw;
     transition: 1000ms all linear;
+    opacity: 50%;
 }
 
 #timer {
@@ -16,7 +17,7 @@
     margin: auto;
     font-size: 30vw;
     font-weight: 900;
-    -webkit-text-stroke: 1.5px red;
+    -webkit-text-stroke: 1.5px #86a0b3;
     -webkit-text-fill-color: white;
     z-index: 10;
 }
@@ -118,14 +119,14 @@ li {
     text-transform: uppercase;
 
     padding: 16px 24px;
-    color: #000000;
+    color: #fff;
     border: 1px solid black;
     border-radius: 42px;
     text-decoration: none;
     position: fixed;
     bottom: 40px;
     left: 32px;
-    background: white;
+    background: blue;
     cursor: default;
 }
 
@@ -136,7 +137,7 @@ li {
 
 .btn:hover {
     color: red;
-    border: 1px solid red; 
+    border: 1px solid red;
 }
 
 .info {
@@ -151,13 +152,13 @@ li {
 }
 
 .progress-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 #canvas {
@@ -165,4 +166,154 @@ li {
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+/* MOBILKA */
+
+@media only screen
+  and (max-device-width: 768px) {
+
+    body {
+        font-family: Roboto, sans-serif;
+        overflow: hidden;
+    }
+
+    body.is-flexible {
+        overflow: auto;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: column;
+        min-height: 100vh;
+        padding: 24px 56px 150px 32px;
+        position: relative;
+    }
+
+    .content.is-index {
+        display: block;
+    }
+
+    h1 {
+        font-weight: 900;
+        font-size: 28px;
+        line-height: 1.1;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        -webkit-text-stroke: 1px black;
+        -webkit-text-fill-color: white;
+        padding-bottom: 35px;
+        padding-top: 16px;
+    }
+
+    .is-right {
+        position: absolute;
+        right: 32px;
+    }
+
+    .is-bottom {
+        position: absolute;
+        bottom: 0;
+    }
+
+    h2 {
+        font-size: 20px;
+        line-height: 1.2;
+        padding-bottom: 48px;
+        font-weight: 500;
+    }
+
+    h2 span:last-child {
+        padding-left: 48px;
+    }
+
+    h2 a {
+        color: inherit;
+    }
+
+    h2 a:hover {
+        color: red;
+    }
+
+    h3 {
+        font-size: 17px;
+        line-height: 1.2;
+        padding-bottom: 16px;
+        font-weight: 500;
+    }
+
+    p {
+        padding-bottom: 24px;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    ul {
+        list-style: circle inside;
+        padding-left: 8px;
+        font-size: 17px;
+        font-weight: 300;
+    }
+
+    li {
+        line-height: 1.4;
+        padding-bottom: 10px;
+    }
+
+    .btn {
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 1;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        padding: 16px 24px;
+        color: #fff;
+        border: 1px solid black;
+        border-radius: 42px;
+        text-decoration: none;
+        position: fixed;
+        bottom: 40px;
+        left: 32%;
+        cursor: default;
+    }
+
+    .btn.is-right {
+        left: unset;
+        right: 32%;
+    }
+
+    .btn:hover {
+        color: #99999;
+        border: 1px solid red;
+    }
+
+    .info {
+        border: 1px solid #000000;
+        padding: 24px 26px 15px 16px;
+        display: inline-flex;
+        flex-flow: column;
+        background: white;
+        box-shadow: 16px 16px rgba(0, 0, 0, 0.1);
+        overflow: scroll;
+    }
+
+      .progress-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    #canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
 }
